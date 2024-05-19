@@ -1,5 +1,5 @@
 public class OUAA {
-    // UI class
+
     class UI {
         private Controller controller = new Controller();
 
@@ -99,7 +99,7 @@ public class OUAA {
         }
     }
 
-    // Controller class
+
     class Controller {
         private StudentDocument studentDocument = new StudentDocument();
         private Database database = new Database();
@@ -118,10 +118,10 @@ public class OUAA {
             if (data == null) {
                 return false;
             } else {
-                // Create file and save all data
+
                 createFile(data);
 
-                // Create hard copy
+
                 createHardCopy(data);
 
                 return true;
@@ -147,153 +147,153 @@ public class OUAA {
             if (studentData == null) {
                 return false;
             } else {
-                // Make hard copy
+
                 System.out.println("Making hard copy of student data: " + studentData);
 
-                // Send to edusoft
+
                 System.out.println("Sending data to edusoft: " + studentData);
                 return true;
             }
         }
 
         public boolean createEvent() {
-            // List all service types
+
             String serviceTypes = eventService.listAllServiceTypes();
             if (serviceTypes == null) {
                 return false;
             }
 
-            // Choose a service and make payment
-            String chosenService = "Catering"; // Example of chosen service
+
+            String chosenService = "Catering";
             boolean paymentSuccessful = eventService.chooseServiceAndMakePayment(chosenService);
             if (!paymentSuccessful) {
                 return false;
             }
 
-            // Return invoice
+
             String invoice = eventService.returnInvoice();
             if (invoice == null) {
                 return false;
             }
 
-            // Prepare for the event
+
             boolean preparationSuccessful = eventService.prepareForEvent();
             return preparationSuccessful;
         }
 
         public boolean findDiploma(String studentID) {
-            // Request the OUAA to find and confirm the diploma
+
             boolean diplomaFound = ouaaService.findAndTickOnPaper(studentID);
             return diplomaFound;
         }
 
         private void createFile(String data) {
-            // Code to create a file and save all data
+
             System.out.println("Creating file and saving data...");
         }
 
         private void createHardCopy(String data) {
-            // Code to create a hard copy of the data
+
             System.out.println("Creating hard copy of data...");
         }
     }
 
-    // StudentDocument class
+
     class StudentDocument {
         public boolean removeUnvalidStudent() {
-            // Code to remove unvalid student
+
             System.out.println("Removing unvalid student.");
-            return true; // Return true if successful, false otherwise
+            return true;
         }
 
         public String listAllDocuments() {
-            // Code to list all documents
+
             System.out.println("Listing all documents.");
-            return "all documents data"; // Return documents data if exists, null if error
+            return "all documents data";
         }
 
         public boolean updateStatsValid(String id, String stats) {
-            // Code to update the student's status
+
             System.out.println("Updating student ID " + id + " to status: " + stats);
-            return true; // Return true if successful, false otherwise
+            return true;
         }
     }
 
-    // StudentGraduation class
+
     class StudentGraduation {
         private DatabaseConnection databaseConnection = new DatabaseConnection();
 
         public String listAllStudents() {
-            // Query all students from the database
+
             String studentData = databaseConnection.queryAllStudents();
             return studentData;
         }
     }
 
-    // DatabaseConnection class
+
     class DatabaseConnection {
         public String queryAllStudents() {
-            // Code to query all students from the database
+
             System.out.println("Querying all students from the database.");
-            return "All student data"; // Return student data if exists, null if error
+            return "All student data";
         }
     }
 
-    // Database class
+
     class Database {
         public String listAllInfo() {
-            // Code to list all information from the database
+
             System.out.println("Listing all information from the database.");
-            return "All information"; // Return data if exists, null if error
+            return "All information";
         }
     }
 
-    // EventOrganizationService class
+
     class EventOrganizationService {
         private PaymentService paymentService = new PaymentService();
 
         public String listAllServiceTypes() {
-            // Code to list all service types
+
             System.out.println("Listing all service types.");
-            return "Catering, Decoration, Music"; // Example service types
+            return "Catering, Decoration, Music";
         }
 
         public boolean chooseServiceAndMakePayment(String service) {
-            // Code to choose service and make payment
+
             System.out.println("Choosing service: " + service + " and making payment...");
             boolean paymentSuccessful = paymentService.processPayment(service);
             return paymentSuccessful;
         }
 
         public String returnInvoice() {
-            // Code to return invoice
+
             System.out.println("Returning invoice.");
-            return "Invoice data"; // Example invoice data
+            return "Invoice data";
         }
 
         public boolean prepareForEvent() {
-            // Code to prepare for event
+
             System.out.println("Preparing for event.");
-            return true; // Return true if preparation is successful, false otherwise
+            return true;
         }
     }
 
-    // PaymentService class
+
     class PaymentService {
         public boolean processPayment(String service) {
-            // Code to process payment
+
             System.out.println("Processing payment for service: " + service);
-            return true; // Return true if payment is successful, false otherwise
+            return true;
         }
     }
 
-    // OUAAService class
+
     class OUAAService {
         public boolean findAndTickOnPaper(String studentID) {
-            // Code to find the diploma and tick on paper
+
             System.out.println("Finding diploma for student ID: " + studentID);
             System.out.println("Ticking diploma on paper...");
-            return true; // Return true if diploma found and ticked successfully, false otherwise
+            return true;
         }
     }
 }

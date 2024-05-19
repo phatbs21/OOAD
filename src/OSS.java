@@ -1,5 +1,5 @@
 public class OSS {
-    // UI Class
+
     public class UI {
         private Controller controller;
 
@@ -25,7 +25,7 @@ public class OSS {
         }
     }
 
-    // Controller Class
+
     public class Controller {
         private StudentDocumentary studentDocumentary;
 
@@ -50,7 +50,7 @@ public class OSS {
         }
     }
 
-    // StudentDocumentary Class
+
     public class StudentDocumentary {
         private DatabaseConnection database;
 
@@ -64,11 +64,11 @@ public class OSS {
         }
     }
 
-    // DatabaseConnection Class
+
     public class DatabaseConnection {
 
         public boolean queryJoinTables() {
-            // Simulate joining tables and returning data
+
             System.out.println("Querying and joining tables...");
             boolean success = linkID();
             if (success) {
@@ -79,14 +79,14 @@ public class OSS {
         }
 
         public boolean linkID() {
-            // Simulate linking ID
+
             System.out.println("Linking ID and returning joined table...");
-            return true; // Assume success for this example
+            return true;
         }
 
         public void updateCheckPoliticalStudiesStatus() {
             System.out.println("Updating check political studies status...");
         }
     }
-    
+
 }

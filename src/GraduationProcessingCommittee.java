@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GraduationProcessingCommittee {
-    // UI class
+
     public class UI {
         private Controller controller;
 
@@ -33,22 +33,22 @@ public class GraduationProcessingCommittee {
         }
 
         public void displayAllInfo() {
-            // Code to display all student info
+
             System.out.println("All student info displayed.");
         }
 
         public void displaySuccessful() {
-            // Code to display success message
+
             System.out.println("Operation successful.");
         }
 
         public void showFilePDF() {
-            // Code to show PDF file
+
             System.out.println("PDF file displayed.");
         }
     }
 
-    // Controller class
+
     public class Controller {
         private Data data;
         private List<StudentDocument> studentDocuments;
@@ -73,7 +73,7 @@ public class GraduationProcessingCommittee {
                 studentDocuments.add(studentDoc);
             }
 
-            // Make backup database and PDF file
+
             makeBackupDatabase();
             makeFilePDF();
         }
@@ -90,10 +90,10 @@ public class GraduationProcessingCommittee {
                 if (studentEvaluation == null) {
                     throw new Exception("Failed to find student info for ID: " + studentID);
                 }
-                // Display all info
+
                 displayAllInfo(studentEvaluation);
 
-                // Make decision
+
                 boolean success = data.updateGraduationStatus(studentID, studentEvaluation);
                 if (!success) {
                     throw new Exception("Failed to update graduation status for ID: " + studentID);
@@ -104,60 +104,60 @@ public class GraduationProcessingCommittee {
         }
 
         private void displayAllInfo(StudentEvaluation studentEvaluation) {
-            // Code to display all student info
+
             System.out.println("Displaying info for student: " + studentEvaluation.getStudentID());
         }
 
         private void displaySuccessful() {
-            // Code to display success message
+
             System.out.println("All students processed successfully.");
         }
 
         private void makeBackupDatabase() {
-            // Code to backup database
+
             System.out.println("Database backup made.");
         }
 
         private void makeFilePDF() {
-            // Code to make PDF file
+
             System.out.println("PDF file created.");
         }
     }
 
-    // Data class
+
     public class Data {
         public List<StudentDocument> queryStudentWithAllCheck() {
-            // Code to query student data
-            return new ArrayList<>(); // Return dummy data for now
+
+            return new ArrayList<>();
         }
 
         public boolean pushInfoStudentWithAllCheck(StudentDocument studentDoc, StudentGraduation studentGraduation) {
-            // Code to push student info
-            return true; // Assume success for now
+
+            return true;
         }
 
         public List<StudentDocument> queryAllData() {
-            // Code to query all student data
-            return new ArrayList<>(); // Return dummy data for now
+
+            return new ArrayList<>();
         }
 
         public StudentEvaluation findInfoWithID(String studentID) {
-            // Code to find info with student ID
-            return new StudentEvaluation(studentID); // Return dummy data for now
+
+            return new StudentEvaluation(studentID);
         }
 
         public boolean updateGraduationStatus(String studentID, StudentEvaluation studentEvaluation) {
-            // Code to update graduation status
-            return true; // Assume success for now
+
+            return true;
         }
     }
 
-    // StudentDocument class
+
     public class StudentDocument {
         private String studentID;
 
         public StudentDocument() {
-            // Constructor code
+
         }
 
         public String getStudentID() {
@@ -169,13 +169,13 @@ public class GraduationProcessingCommittee {
         }
     }
 
-    // StudentGraduation class
+
     public class StudentGraduation {
         private String studentID;
         private boolean graduationStatus;
 
         public StudentGraduation() {
-            // Constructor code
+
         }
 
         public String getStudentID() {
@@ -195,7 +195,7 @@ public class GraduationProcessingCommittee {
         }
     }
 
-    // StudentEvaluation class
+
     public class StudentEvaluation {
         private String studentID;
         private boolean creditsComplete;
@@ -204,10 +204,10 @@ public class GraduationProcessingCommittee {
 
         public StudentEvaluation(String studentID) {
             this.studentID = studentID;
-            // Assume some default values for now
-            this.creditsComplete = true; // Default to true for testing
-            this.gradesSatisfactory = true; // Default to true for testing
-            this.englishCertification = true; // Default to true for testing
+
+            this.creditsComplete = true;
+            this.gradesSatisfactory = true;
+            this.englishCertification = true;
         }
 
         public String getStudentID() {
@@ -243,8 +243,5 @@ public class GraduationProcessingCommittee {
         }
     }
 
-    // Main class to demonstrate functionality
-
-// StudentGraduation
 
 }

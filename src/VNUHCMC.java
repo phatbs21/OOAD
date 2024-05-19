@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class VNUHCMC {
-    // UI class
+
     class UI {
         Controller controller = new Controller();
 
@@ -23,7 +23,7 @@ public class VNUHCMC {
         }
     }
 
-    // Controller class
+
     class Controller {
         StudentGraduation studentGraduation = new StudentGraduation();
         VNURecord vnuRecord = new VNURecord();
@@ -56,13 +56,13 @@ public class VNUHCMC {
         }
     }
 
-    // StudentGraduation class
+
     class StudentGraduation {
         Data data = new Data();
         List<Student> studentList;
 
         public void createObj() {
-            // Initialization logic here
+
         }
 
         public void queryStudent() {
@@ -70,7 +70,7 @@ public class VNUHCMC {
         }
 
         public void returnData() {
-            // Process returned data
+
         }
 
         public List<Student> getStudentList() {
@@ -78,22 +78,22 @@ public class VNUHCMC {
         }
     }
 
-    // VNURecord class
+
     class VNURecord {
         public void createObj() {
-            // Initialization logic here
+
         }
 
         public void pushInfoStudentWithSchool(Student student) {
             System.out.println("Pushing data for student: " + student.getName());
-            // Push data logic here
+
         }
     }
 
-    // Data class
+
     class Data {
         public List<Student> queryData() {
-            // Mock data
+
             List<Student> students = new ArrayList<>();
             students.add(new Student("John Doe"));
             students.add(new Student("Jane Smith"));
@@ -101,7 +101,7 @@ public class VNUHCMC {
         }
     }
 
-    // Student class
+
     class Student {
         private String name;
 

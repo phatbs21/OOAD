@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FinanceDepartment {
-    // UI class
+
     public class UI {
         private Controller controller;
 
@@ -41,7 +41,7 @@ public class FinanceDepartment {
         }
     }
 
-    // Controller class
+
     public class Controller {
         private DatabaseConnection database;
 
@@ -61,35 +61,33 @@ public class FinanceDepartment {
                 return false;
             }
 
-            // Create file and save all data
-            // Create hard copy
-            // Assuming these operations are successful for simplicity
+
             return true;
         }
     }
 
-    // StudentDocument class
+
     public class StudentDocument {
-        // attributes and methods for student document
+
     }
 
-    // DatabaseConnection class
+
     public class DatabaseConnection {
         public boolean removeData(StudentDocument studentDocument) {
-            // logic to remove invalid student data
-            // return true if successful, false otherwise
+
+
             return true;
         }
 
         public List<Student> listAllStudents() {
-            // logic to retrieve all students
-            // return list of students
-            return new ArrayList<>(); // returning empty list for simplicity
+
+
+            return new ArrayList<>();
         }
     }
 
-    // Student class
+
     public class Student {
-        // attributes and methods for student
+
     }
 }
